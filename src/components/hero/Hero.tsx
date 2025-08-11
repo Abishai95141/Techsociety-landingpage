@@ -11,9 +11,9 @@ const StatPill = ({ value, label }: { value: string | number; label: string }) =
 
 const useSEO = () => {
   useEffect(() => {
-    document.title = "TechSociety — Build Together, Learn Faster";
+    document.title = "Tech Society — Build Together, Learn Faster";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Build together, learn faster, and ship more with TechSociety.");
+    if (metaDesc) metaDesc.setAttribute("content", "Build together, learn faster, and ship more with Tech Society.");
 
     const canonicalId = 'canonical-link';
     let canonical = document.getElementById(canonicalId) as HTMLLinkElement | null;
