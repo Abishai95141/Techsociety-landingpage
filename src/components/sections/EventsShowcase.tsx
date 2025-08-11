@@ -163,7 +163,7 @@ const EventsShowcase: React.FC = () => {
 
   return (
     <section
-      id="events-showcase"
+      id="events"
       ref={sectionRef}
       aria-labelledby="events-title"
       className="mx-auto max-w-6xl px-4 md:px-6 py-20 md:py-28"

@@ -110,7 +110,7 @@ const CentralTeam: React.FC = () => {
               spotlightColor="rgba(0,0,0,0.10)"
               className={[
                 "team-card p-6 md:p-7 rounded-3xl bg-card border border-border text-foreground transition-transform",
-                m.featured ? "lg:col-span-2" : "",
+                (m.featured || m.role === "Assistant Coordinator") ? "sm:col-span-2 lg:col-span-2" : "",
                 "hover:shadow-md",
               ].join(" ")}
             >
