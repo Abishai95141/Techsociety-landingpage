@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 
-const StatPill = ({ value, label }: { value: number; label: string }) => (
+const StatPill = ({ value, label }: { value: string | number; label: string }) => (
   <div className="rounded-full bg-card text-card-foreground shadow px-4 py-3 text-center">
     <div className="text-lg font-bold leading-none">{value}</div>
     <div className="text-xs text-muted-foreground">{label}</div>
@@ -91,9 +91,8 @@ export const Hero = () => {
                   <p className="text-lg md:text-xl font-medium">Ship More.</p>
                 </div>
                 <div className="flex gap-3 md:gap-4 pointer-events-auto">
-                  <StatPill value={4} label="Projects" />
-                  <StatPill value={3} label="Events" />
-                  <StatPill value={0} label="Members" />
+                  <StatPill value="120+" label="Events" />
+                  <StatPill value="659+" label="Members" />
                 </div>
               </div>
             </aside>
