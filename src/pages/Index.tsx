@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/sections/Projects";
 import HackHustle24 from "@/components/sections/HackHustle24";
 import CentralTeam from "@/components/sections/CentralTeam";
 import CommunityLeads from "@/components/sections/CommunityLeads";
+import JoinQR from "@/components/sections/JoinQR";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <ProjectsSection />
       <CentralTeam />
       <CommunityLeads />
+      <JoinQR />
     </main>
   );
 };
