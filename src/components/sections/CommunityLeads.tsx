@@ -16,8 +16,8 @@ const communities: Community[] = [
   },
   {
     name: "Cyber Security Community",
-    secretary: "JothiKrishnaa V",
-    jointSecretaries: ["Jaiyantan S", "Thirumurugan K", "Geerthivash J D"],
+    secretary: "Jaiyantan S",
+    jointSecretaries: ["?", "Geerthivash J D"],
   },
   {
     name: "Intelligent Systems Community",
