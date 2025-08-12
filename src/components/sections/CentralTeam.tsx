@@ -8,29 +8,44 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 interface Member {
   name: string;
   role: string;
+  link?: string;
   featured?: boolean;
 }
-const members: Member[] = [{
-  name: "Karnala Santhan Kumar",
-  role: "Coordinator",
-  featured: true
-}, {
-  name: "S Mohamed Ahsan",
-  role: "Assistant Coordinator"
-}, {
-  name: "Jai Surya R",
-  role: "Assistant Coordinator"
-}, {
-  name: "Abishai K C",
-  role: "Assistant Coordinator"
-}];
-const leaders = [{
-  name: "Mr. C. Obed Otto",
-  role: "Community Head, Dean – SCOFT (ICT)"
-}, {
-  name: "Ms. Akila Mohan",
-  role: "Overall Faculty Coordinator"
-}];
+const members: Member[] = [
+  {
+    name: "Karnala Santhan Kumar",
+    role: "Coordinator",
+    link: "https://www.linkedin.com/in/santhan-kumar-906a1328b/",
+    featured: true,
+  },
+  {
+    name: "S Mohamed Ahsan",
+    role: "Assistant Coordinator",
+    link: "https://www.linkedin.com/in/mohamedahsan037/",
+  },
+  {
+    name: "Jai Surya R",
+    role: "Assistant Coordinator",
+    link: "https://www.linkedin.com/in/jai-surya-1801abc/",
+  },
+  {
+    name: "Abishai K C",
+    role: "Assistant Coordinator",
+    link: "https://www.linkedin.com/in/abishai-k-c-6a5288271/",
+  },
+];
+const leaders = [
+  {
+    name: "Mr. C. Obed Otto",
+    role: "Community Head, Dean – SCOFT (ICT)",
+    link: "https://www.linkedin.com/in/obedotto/",
+  },
+  {
+    name: "Ms. Akila Mohan",
+    role: "Overall Faculty Coordinator",
+    link: "https://www.linkedin.com/in/akilamohan/",
+  },
+];
 function getInitials(name: string) {
   return name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
 }
@@ -81,7 +96,16 @@ const CentralTeam: React.FC = () => {
 
         {/* Leadership strip */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          {leaders.map(l => <div key={l.name} className="rounded-2xl border border-border bg-card text-foreground p-4 md:p-5 shadow-sm">
+          {leaders.map(l => (
+            <a
+              key={l.name}
+              href={l.link || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl border border-border bg-card text-foreground p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow"
+              aria-label={`Open ${l.name} on LinkedIn`}
+              title={`Open ${l.name} on LinkedIn`}
+            >
               <div className="flex items-start gap-3">
                 <div className="size-10 shrink-0 rounded-full border border-border bg-background" />
                 <div>
@@ -89,14 +113,25 @@ const CentralTeam: React.FC = () => {
                   <p className="text-sm text-muted-foreground leading-tight">{l.role}</p>
                 </div>
               </div>
-            </div>)}
+            </a>
+          ))}
         </div>
 
         <Separator className="my-8" />
 
         {/* Central Team grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {members.map(m => <SpotlightCard key={m.name} spotlightColor="rgba(0,0,0,0.10)" className={["team-card p-6 md:p-7 rounded-3xl bg-card border border-border text-foreground transition-transform", m.featured || m.role === "Assistant Coordinator" ? "sm:col-span-2 lg:col-span-2" : "", "hover:shadow-md"].join(" ")}>
+          {members.map(m => <SpotlightCard key={m.name} spotlightColor="rgba(0,0,0,0.10)" className={["team-card p-6 md:p-7 rounded-3xl bg-card border border-border text-foreground transition-transform", m.featured || m.role === "Assistant Coordinator" ? "sm:col-span-2 lg:col-span-2" : "", "hover:shadow-md"].join(" ")}> 
+              {m.link && (
+                <a
+                  href={m.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-20"
+                  aria-label={`Open ${m.name} on LinkedIn`}
+                  title={`Open ${m.name} on LinkedIn`}
+                />
+              )}
               <div className="flex items-start gap-4">
                 <Avatar className={m.featured ? "size-24" : "size-20"}>
                   <AvatarFallback className="bg-muted text-foreground/80">
