@@ -49,7 +49,7 @@ export const Hero = () => {
             {/* Left CTA stack */}
             <aside className="col-span-12 md:col-span-3 flex md:block justify-center md:justify-start gap-3 md:gap-4 pointer-events-none">
               <div className="flex md:flex-col gap-3 md:gap-4 pointer-events-auto">
-                <Button asChild variant="hero" size="xl"><a href="https://docs.google.com/forms/d/e/1FAIpQLScUka6EpJNCxI_t6v84On8aAHKIefQMzJC-3Ds_T8-prerOow/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Join TechSociety</a></Button>
+                {/* <Button asChild variant="hero" size="xl"><a href="https://docs.google.com/forms/d/e/1FAIpQLScUka6EpJNCxI_t6v84On8aAHKIefQMzJC-3Ds_T8-prerOow/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Join TechSociety</a></Button> */}
                 <Button
                   type="button"
                   variant="pill"
